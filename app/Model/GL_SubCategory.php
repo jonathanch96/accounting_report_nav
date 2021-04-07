@@ -14,4 +14,7 @@ class GL_SubCategory extends Model implements Auditable
 		'formula',
 		'additional_formula',
 	];
+	public function gl_accounts(){
+		return $this->hasMany('App\Model\GL_Account','category_id','id');
+	}
 }

@@ -15,4 +15,7 @@ class GL_Account extends Model implements Auditable
 		'Account_type',
 		'category_id',
 	];
+	public function glnav(){
+		return $this->belongsTo('App\Model\NAV\GL_Account_Nav','No_','No_');
+	}
 }

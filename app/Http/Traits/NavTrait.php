@@ -16,6 +16,9 @@ trait NavTrait {
     public function numberFormat($value){
     	return number_format($value,'2','.',',');
     }
+    public function calculate($formula){
+    	
+    }
    
   
 }
