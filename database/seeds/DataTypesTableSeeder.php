@@ -1,6 +1,5 @@
 <?php
 
-namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
@@ -108,6 +107,78 @@ class DataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":"No_","order_display_column":"No_","order_direction":"asc","default_search_key":null}',
                 'created_at' => '2021-04-06 12:14:59',
                 'updated_at' => '2021-04-06 12:14:59',
+            ),
+            5 => 
+            array (
+                'id' => 9,
+                'name' => 'g_l__sub_categories',
+                'slug' => 'g-l-sub-categories',
+                'display_name_singular' => 'GL  Sub Category',
+                'display_name_plural' => 'GL  Sub Categories',
+                'icon' => 'voyager-folder',
+                'model_name' => 'App\\Model\\GL_SubCategory',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 1,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2021-04-07 06:04:56',
+                'updated_at' => '2021-04-08 12:08:50',
+            ),
+            6 => 
+            array (
+                'id' => 11,
+                'name' => 'g_l__categories',
+                'slug' => 'g-l-categories',
+                'display_name_singular' => 'GL  Category',
+                'display_name_plural' => 'GL  Categories',
+                'icon' => 'voyager-folder',
+                'model_name' => 'App\\Model\\GL_Category',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 1,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2021-04-07 12:14:47',
+                'updated_at' => '2021-04-08 10:04:15',
+            ),
+            7 => 
+            array (
+                'id' => 13,
+                'name' => 'permissions',
+                'slug' => 'permissions',
+                'display_name_singular' => 'Permission',
+                'display_name_plural' => 'Permissions',
+                'icon' => 'voyager-lock',
+                'model_name' => 'App\\Model\\Permission',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 1,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
+                'created_at' => '2021-04-07 12:22:29',
+                'updated_at' => '2021-04-07 12:22:29',
+            ),
+            8 => 
+            array (
+                'id' => 14,
+                'name' => 'report_types',
+                'slug' => 'report-types',
+                'display_name_singular' => 'Report Type',
+                'display_name_plural' => 'Report Types',
+                'icon' => 'voyager-news',
+                'model_name' => 'App\\Model\\ReportType',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 1,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
+                'created_at' => '2021-04-08 10:00:38',
+                'updated_at' => '2021-04-08 10:00:38',
             ),
         ));
         

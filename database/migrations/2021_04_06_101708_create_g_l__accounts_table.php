@@ -21,7 +21,7 @@ class CreateGLAccountsTable extends Migration
             $table->integer('Account_type')->default(0);
             $table->unsignedBigInteger('category_id')->nullable();
             $table->timestamps();
-            $table->foreign('category_id')->references('id')->on('g_l__categories')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('g_l__sub_categories')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

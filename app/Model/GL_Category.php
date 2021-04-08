@@ -14,5 +14,6 @@ class GL_Category extends Model implements Auditable
 		'formula',
 		'additional_formula',
 		'category_id',
+		'report_type_id',
 	];
 }

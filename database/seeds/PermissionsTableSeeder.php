@@ -1,6 +1,5 @@
 <?php
 
-namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
@@ -306,6 +305,174 @@ class PermissionsTableSeeder extends Seeder
                 'table_name' => 'g_l__accounts',
                 'created_at' => '2021-04-06 12:14:59',
                 'updated_at' => '2021-04-06 12:14:59',
+            ),
+            36 => 
+            array (
+                'id' => 37,
+                'key' => 'browse_g_l__sub_categories',
+                'table_name' => 'g_l__sub_categories',
+                'created_at' => '2021-04-07 06:04:56',
+                'updated_at' => '2021-04-07 06:04:56',
+            ),
+            37 => 
+            array (
+                'id' => 38,
+                'key' => 'read_g_l__sub_categories',
+                'table_name' => 'g_l__sub_categories',
+                'created_at' => '2021-04-07 06:04:56',
+                'updated_at' => '2021-04-07 06:04:56',
+            ),
+            38 => 
+            array (
+                'id' => 39,
+                'key' => 'edit_g_l__sub_categories',
+                'table_name' => 'g_l__sub_categories',
+                'created_at' => '2021-04-07 06:04:56',
+                'updated_at' => '2021-04-07 06:04:56',
+            ),
+            39 => 
+            array (
+                'id' => 40,
+                'key' => 'add_g_l__sub_categories',
+                'table_name' => 'g_l__sub_categories',
+                'created_at' => '2021-04-07 06:04:56',
+                'updated_at' => '2021-04-07 06:04:56',
+            ),
+            40 => 
+            array (
+                'id' => 41,
+                'key' => 'delete_g_l__sub_categories',
+                'table_name' => 'g_l__sub_categories',
+                'created_at' => '2021-04-07 06:04:56',
+                'updated_at' => '2021-04-07 06:04:56',
+            ),
+            41 => 
+            array (
+                'id' => 42,
+                'key' => 'browse_g_l__categories',
+                'table_name' => 'g_l__categories',
+                'created_at' => '2021-04-07 12:14:47',
+                'updated_at' => '2021-04-07 12:14:47',
+            ),
+            42 => 
+            array (
+                'id' => 43,
+                'key' => 'read_g_l__categories',
+                'table_name' => 'g_l__categories',
+                'created_at' => '2021-04-07 12:14:47',
+                'updated_at' => '2021-04-07 12:14:47',
+            ),
+            43 => 
+            array (
+                'id' => 44,
+                'key' => 'edit_g_l__categories',
+                'table_name' => 'g_l__categories',
+                'created_at' => '2021-04-07 12:14:47',
+                'updated_at' => '2021-04-07 12:14:47',
+            ),
+            44 => 
+            array (
+                'id' => 45,
+                'key' => 'add_g_l__categories',
+                'table_name' => 'g_l__categories',
+                'created_at' => '2021-04-07 12:14:47',
+                'updated_at' => '2021-04-07 12:14:47',
+            ),
+            45 => 
+            array (
+                'id' => 46,
+                'key' => 'delete_g_l__categories',
+                'table_name' => 'g_l__categories',
+                'created_at' => '2021-04-07 12:14:47',
+                'updated_at' => '2021-04-07 12:14:47',
+            ),
+            46 => 
+            array (
+                'id' => 47,
+                'key' => 'browse_permissions',
+                'table_name' => 'permissions',
+                'created_at' => '2021-04-07 12:22:29',
+                'updated_at' => '2021-04-07 12:22:29',
+            ),
+            47 => 
+            array (
+                'id' => 48,
+                'key' => 'read_permissions',
+                'table_name' => 'permissions',
+                'created_at' => '2021-04-07 12:22:29',
+                'updated_at' => '2021-04-07 12:22:29',
+            ),
+            48 => 
+            array (
+                'id' => 49,
+                'key' => 'edit_permissions',
+                'table_name' => 'permissions',
+                'created_at' => '2021-04-07 12:22:29',
+                'updated_at' => '2021-04-07 12:22:29',
+            ),
+            49 => 
+            array (
+                'id' => 50,
+                'key' => 'add_permissions',
+                'table_name' => 'permissions',
+                'created_at' => '2021-04-07 12:22:29',
+                'updated_at' => '2021-04-07 12:22:29',
+            ),
+            50 => 
+            array (
+                'id' => 51,
+                'key' => 'delete_permissions',
+                'table_name' => 'permissions',
+                'created_at' => '2021-04-07 12:22:29',
+                'updated_at' => '2021-04-07 12:22:29',
+            ),
+            51 => 
+            array (
+                'id' => 52,
+                'key' => 'browse_pl_report',
+                'table_name' => NULL,
+                'created_at' => '2021-04-07 12:25:37',
+                'updated_at' => '2021-04-07 12:25:37',
+            ),
+            52 => 
+            array (
+                'id' => 53,
+                'key' => 'browse_report_types',
+                'table_name' => 'report_types',
+                'created_at' => '2021-04-08 10:00:38',
+                'updated_at' => '2021-04-08 10:00:38',
+            ),
+            53 => 
+            array (
+                'id' => 54,
+                'key' => 'read_report_types',
+                'table_name' => 'report_types',
+                'created_at' => '2021-04-08 10:00:38',
+                'updated_at' => '2021-04-08 10:00:38',
+            ),
+            54 => 
+            array (
+                'id' => 55,
+                'key' => 'edit_report_types',
+                'table_name' => 'report_types',
+                'created_at' => '2021-04-08 10:00:38',
+                'updated_at' => '2021-04-08 10:00:38',
+            ),
+            55 => 
+            array (
+                'id' => 56,
+                'key' => 'add_report_types',
+                'table_name' => 'report_types',
+                'created_at' => '2021-04-08 10:00:38',
+                'updated_at' => '2021-04-08 10:00:38',
+            ),
+            56 => 
+            array (
+                'id' => 57,
+                'key' => 'delete_report_types',
+                'table_name' => 'report_types',
+                'created_at' => '2021-04-08 10:00:38',
+                'updated_at' => '2021-04-08 10:00:38',
             ),
         ));
         

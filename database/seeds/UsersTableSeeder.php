@@ -1,6 +1,5 @@
 <?php
 
-namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
@@ -28,7 +27,7 @@ class UsersTableSeeder extends Seeder
                 'avatar' => 'users/default.png',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$CbTyAjd/G.bSRdYcHjvIxu9yAlxPCWg.asgiXqViWmUZ6NJiXROLO',
-                'remember_token' => NULL,
+                'remember_token' => 'OWrriZtqPgCy3P72ucvHTQXfSSO0dWxMqukYXdjE1i1P5pr7ZsEouj3hWDHN',
                 'settings' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,

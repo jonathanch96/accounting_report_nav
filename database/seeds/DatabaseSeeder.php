@@ -21,10 +21,9 @@ class DatabaseSeeder extends Seeder
         $this->call(RolesTableSeeder::class);
         $this->call(PermissionRoleTableSeeder::class);
         $this->call(SettingsTableSeeder::class);
+        $this->call(ReportTypesTableSeeder::class);
         $this->call(GLCategoriesTableSeeder::class);
-        $this->call(GLAccountsTableSeeder::class);
         $this->call(GLSubCategoriesTableSeeder::class);
-        $this->call(GLCategoryMappingsTableSeeder::class);
-        $this->call(GLSubCategoryMappingsTableSeeder::class);
+        $this->call(GLAccountsTableSeeder::class);
     }
 }
