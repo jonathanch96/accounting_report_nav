@@ -1,5 +1,6 @@
 <?php
 
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
@@ -70,8 +71,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 07:46:35',
+                'category_id' => 2,
             ),
             5 => 
             array (
@@ -81,8 +82,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 07:46:44',
+                'category_id' => 2,
             ),
             6 => 
             array (
@@ -92,8 +93,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 07:46:51',
+                'category_id' => 2,
             ),
             7 => 
             array (
@@ -103,8 +104,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 07:47:01',
+                'category_id' => 2,
             ),
             8 => 
             array (
@@ -114,8 +115,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 07:47:10',
+                'category_id' => 2,
             ),
             9 => 
             array (
@@ -125,8 +126,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 07:47:17',
+                'category_id' => 2,
             ),
             10 => 
             array (
@@ -136,8 +137,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 07:47:25',
+                'category_id' => 2,
             ),
             11 => 
             array (
@@ -147,8 +148,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 07:47:37',
+                'category_id' => 2,
             ),
             12 => 
             array (
@@ -158,8 +159,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 07:47:44',
+                'category_id' => 2,
             ),
             13 => 
             array (
@@ -169,8 +170,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 12:29:43',
+                'category_id' => 3,
             ),
             14 => 
             array (
@@ -180,8 +181,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 12:29:53',
+                'category_id' => 3,
             ),
             15 => 
             array (
@@ -191,8 +192,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 12:30:57',
+                'category_id' => 3,
             ),
             16 => 
             array (
@@ -202,8 +203,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 12:30:53',
+                'category_id' => 3,
             ),
             17 => 
             array (
@@ -213,8 +214,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 12:30:50',
+                'category_id' => 3,
             ),
             18 => 
             array (
@@ -224,8 +225,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 12:30:46',
+                'category_id' => 3,
             ),
             19 => 
             array (
@@ -235,8 +236,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 12:30:43',
+                'category_id' => 3,
             ),
             20 => 
             array (
@@ -246,8 +247,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 12:30:39',
+                'category_id' => 3,
             ),
             21 => 
             array (
@@ -257,8 +258,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 12:30:36',
+                'category_id' => 3,
             ),
             22 => 
             array (
@@ -268,8 +269,8 @@ class GLSubCategoriesTableSeeder extends Seeder
                 'formula' => '+',
                 'additional_formula' => NULL,
                 'created_at' => '2021-04-07 14:09:17',
-                'updated_at' => '2021-04-07 14:09:17',
-                'category_id' => NULL,
+                'updated_at' => '2021-04-09 12:30:11',
+                'category_id' => 3,
             ),
             23 => 
             array (

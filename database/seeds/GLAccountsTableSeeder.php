@@ -1,5 +1,6 @@
 <?php
 
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
@@ -1719,9 +1720,9 @@ class GLAccountsTableSeeder extends Seeder
                     'Name' => 'BIAYA TRANSPORT',
                     'Income_Balance' => 0,
                     'Account_type' => 0,
-                    'category_id' => 4,
+                    'category_id' => 14,
                     'created_at' => '2021-04-06 12:24:03',
-                    'updated_at' => '2021-04-06 12:24:03',
+                    'updated_at' => '2021-04-09 05:43:41',
                 ),
                 155 => 
                 array (
@@ -2016,9 +2017,9 @@ class GLAccountsTableSeeder extends Seeder
                     'Name' => 'BIAYA TRANSPORT',
                     'Income_Balance' => 0,
                     'Account_type' => 0,
-                    'category_id' => 4,
+                    'category_id' => 22,
                     'created_at' => '2021-04-06 12:24:04',
-                    'updated_at' => '2021-04-06 12:24:04',
+                    'updated_at' => '2021-04-09 05:44:24',
                 ),
                 182 => 
                 array (
@@ -2544,9 +2545,9 @@ class GLAccountsTableSeeder extends Seeder
                     'Name' => 'KERUGIAN SELISIH KURS',
                     'Income_Balance' => 0,
                     'Account_type' => 0,
-                    'category_id' => 4,
+                    'category_id' => 43,
                     'created_at' => '2021-04-06 12:24:05',
-                    'updated_at' => '2021-04-06 12:24:05',
+                    'updated_at' => '2021-04-09 05:46:08',
                 ),
                 230 => 
                 array (
@@ -2621,9 +2622,9 @@ class GLAccountsTableSeeder extends Seeder
                     'Name' => 'BIAYA LAIN-LAIN',
                     'Income_Balance' => 0,
                     'Account_type' => 0,
-                    'category_id' => 4,
+                    'category_id' => 45,
                     'created_at' => '2021-04-06 12:24:05',
-                    'updated_at' => '2021-04-06 12:24:05',
+                    'updated_at' => '2021-04-09 05:45:30',
                 ),
                 237 => 
                 array (
@@ -2654,9 +2655,9 @@ class GLAccountsTableSeeder extends Seeder
                     'Name' => 'BIAYA LAIN-LAIN',
                     'Income_Balance' => 0,
                     'Account_type' => 0,
-                    'category_id' => 4,
+                    'category_id' => 45,
                     'created_at' => '2021-04-06 12:24:05',
-                    'updated_at' => '2021-04-06 12:24:05',
+                    'updated_at' => '2021-04-09 05:45:01',
                 ),
                 240 => 
                 array (
