@@ -17,7 +17,9 @@ Route::group(['prefix' => ''], function () {
 	Voyager::routes();
 	Route::group(['middleware' => 'admin.user'], function () {
 		Route::get('/pl_report',['uses'=>'PLController@index','as'=>'index']);
+		Route::get('/bs_report',['uses'=>'BSController@index','as'=>'index']);
 		Route::get('/pl_report_download',['uses'=>'PLController@download','as'=>'download']);
+		Route::get('/bs_report_download',['uses'=>'BSController@download','as'=>'download']);
 	});
 
 });

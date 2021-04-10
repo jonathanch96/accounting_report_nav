@@ -9,7 +9,8 @@ use App\Model\GL_Account;
 class GLAccountController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
 {
 	private function getData(){
-		$data = GL_Account_Nav::where('Account Type','=',0)->get();
+		//$data = GL_Account_Nav::where('Account Type','=',0)->get();
+		$data = GL_Account_Nav::get();
 		foreach ($data as $key => $d) {
 			$temp_gl = GL_Account::where('No_','=',$d->No_)->first();
 			$data = [

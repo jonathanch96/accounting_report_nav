@@ -6,7 +6,9 @@ use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithColumnFormatting;
 use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
-class PLExport implements FromView,ShouldAutoSize,WithColumnFormatting
+use Maatwebsite\Excel\Concerns\WithStyles;
+use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
+class PLExport implements FromView,ShouldAutoSize,WithColumnFormatting,WithStyles
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -18,6 +20,25 @@ class PLExport implements FromView,ShouldAutoSize,WithColumnFormatting
     	$this->data = $data;
     	$this->period_from = $period_from;
     	$this->period_to = $period_to;
+    }
+    public function styles(Worksheet $sheet){
+        $row_format = array();
+        $counter = count($this->data[0]['detail']);
+        $row_start=6;
+
+        //add bold header
+        $row_format[5]=['font' => ['bold' => true]];
+        $row_format[6]=['font' => ['bold' => true]];
+
+
+
+        for ($i=0; $i <$counter ; $i++) {
+            $row_start+=count($this->data[0]["detail"][$i]["detail"])+1;
+            $row_format[$row_start]=['font' => ['bold' => true]];
+            $row_start++;
+
+        } 
+        return $row_format;
     }
     public function getColumn($number){
         $alphabet = array( 'A', 'B', 'C', 'D', 'E',
@@ -35,7 +56,7 @@ class PLExport implements FromView,ShouldAutoSize,WithColumnFormatting
         $colformat = array();
         $counter = count($this->data)*2;
         for ($i=1; $i <$counter ; $i+=2) { 
-            $colformat[$this->getColumn($i)]="#,##0";
+            $colformat[$this->getColumn($i)]='_(* #,##0_);_(* (#,##0);_(* "-"??_);_(@_)';
             $colformat[$this->getColumn($i+1)]="0.00%";
 
         }

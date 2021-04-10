@@ -3,45 +3,48 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
 use Auth;
 use App\Http\Traits\NavTrait;
 use App\Model\GL_Category;
 use Excel;
-use App\Exports\PLExport;
-use \TCG\Voyager\Models\DataType;
-class PLController extends \TCG\Voyager\Http\Controllers\Controller
+use App\Exports\BSExport;
+class BSController extends Controller
 {
 	use NavTrait;
-	
 	public function index(Request $request)
 	{
-		if(!Auth::user()->hasPermission('browse_pl_report')){
+		if(!Auth::user()->hasPermission('browse_bs_report')){
 			abort(403,"This action is unauthorized.");
 		}
 
-		return view('pl_report',[]);
+		return view('bs_report',[]);
 
 	}
 	public function download(Request $request){
-		if(!Auth::user()->hasPermission('browse_pl_report')){
+		if(!Auth::user()->hasPermission('browse_bs_report')){
 			abort(403,"This action is unauthorized.");
 		}
 		$this->validate($request,[
-			'month_from'=>'required|date_format:m/Y',
-			'month_to'=>'required|date_format:m/Y'
+			'month'=>'required|date_format:m/Y',
 		]);
-		$tb = $this->getData($request->month_from,$request->month_to,'pl');
-		$pl = $this->tbtopl($tb);
+		$tb = $this->getData($request->month,$request->month,'bs');
+		$bs = $this->tbtobs($tb);
 		$period_from = date('M Y');
 		$period_to = date('M Y');
-		$data = array();
-		$category = GL_Category::where('report_type_id','1')->orderBy('order')->get();
 		$temp_array = array();
+		$temp_array_2 =array();
+		$data = array();
+		$data_2 = array();
+		$category = GL_Category::where('report_type_id','2')->orderBy('order')->get();
 		$flag_first_pl = true;
-		foreach ($pl as $key => $p) {
+
+
+		foreach ($bs as $key => $p) {
 			$temp_category_data_detail = array();
+			$temp_category_data_detail_2 = array();
 			$temp_array['date'] = $p["date"];
+			$temp_array_2['date'] = $p["date"];
+
 			if($flag_first_pl){
 				$flag_first_pl=false;
 				$period_from = date('M Y',strtotime($p["date"]));
@@ -50,6 +53,7 @@ class PLController extends \TCG\Voyager\Http\Controllers\Controller
 
 			foreach ($category as $key => $c) {
 				$temp_detail = array();
+				$temp_detail_2 = array();
 
 				//kalkulasi total/summarynya
 				$formula = $c->formula;
@@ -88,9 +92,7 @@ class PLController extends \TCG\Voyager\Http\Controllers\Controller
 						//if($counter==4)dd($dataModel);
 					if($c->additional_formula == 'g-l-sub-categories'){
 						foreach ($p["detail"] as $key => $pdet) {
-							if($pdet["name"]=="Penjualan Net"){
-								$divide = $pdet['value'];
-							}
+							
 							if($pdet["id"]==$data_to_search){
 								$temp_val = $pdet['value']*($prev_action=="-"?-1:1);
 								//if($c->id==10)dd($tb);
@@ -115,54 +117,75 @@ class PLController extends \TCG\Voyager\Http\Controllers\Controller
 								$value+=$temp_val;
 							}
 						}
+						foreach ($temp_array_2['detail']??[] as $key => $ta) {
+							if($ta['id']==$data_to_search){
+								$temp_val = $ta['value']*($prev_action=="-"?-1:1);
+								$value+=$temp_val;
+							}
+						}
 					}
 					
 
 					$counter++;
 				}
 
-				if($c->name=='Estimasi Pajak'){
-					$value*=0.25;
-				}
-
 				//detail data
 				foreach ($p["detail"] as $key => $pdet) {
 					if($pdet["category_id"]==$c->id){
-						array_push($temp_detail, $pdet);
+						if($c->order<800){
+							array_push($temp_detail, $pdet);
+						}else{
+							array_push($temp_detail_2, $pdet);
+						}
 					}
 				}
+				//remove if 1
+				if($c->order<800){
 
-				// if($c->name=='Estimasi Pajak'){
-				// 	dd($value);
-				// }
-				if(count($temp_detail)<=1){
-					$temp_detail = array();
+					if(count($temp_detail)<=1){
+						$temp_detail = array();
+					}
+					array_push($temp_category_data_detail, [
+						'id'=>$c->id,
+						'name'=>$c->name,
+						'detail'=>$temp_detail,
+						'value'=>$value,
+					]);
+					$temp_array['detail']=$temp_category_data_detail;
+
+				}else{
+					if(count($temp_detail_2)<=1){
+						$temp_detail_2 = array();
+					}
+					array_push($temp_category_data_detail_2, [
+						'id'=>$c->id,
+						'name'=>$c->name,
+						'detail'=>$temp_detail_2,
+						'value'=>$value,
+					]);
+					$temp_array_2['detail']=$temp_category_data_detail_2;
+
 				}
-				
-				array_push($temp_category_data_detail, [
-					'id'=>$c->id,
-					'name'=>$c->name,
-					'detail'=>$temp_detail,
-					'value'=>$value,
-					'percentage'=>$value/$divide,
-				]);
-				$temp_array['detail']=$temp_category_data_detail;
+
+
+
 			}
 			array_push($data, $temp_array);
-
-
+			array_push($data_2, $temp_array_2);
+			
 		}
+
 		$data = array_reverse($data);
-		//dd($data);
-		
-		return Excel::download(new PLExport($data,$period_from,$period_to), 'pl_report.xlsx');
-		// return view('reports.pl_report_template',[
+		$data_2 = array_reverse($data_2);
+
+		// return view('reports.bs_report_template',[
 		// 	'data'=>$data,
 		// 	'period_from'=>$period_from,
 		// 	'period_to'=>$period_to,
 
 		// ]);
+		dd($data_2);
+		return Excel::download(new BSExport($data,$period_from,$period_to), 'bs_report.xlsx');
 
 	}
-	
 }

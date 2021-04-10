@@ -4,10 +4,10 @@
 			<th>PT. Graha Citra Pratama</th>
 		</tr>
 		<tr>
-			<th>Profit &amp; Loss</th>
+			<th>Balance Sheet</th>
 		</tr>
 		<tr>
-			<th>For Period of {{$period_from}} and YTD {{$period_to}}</th>
+			<th>As of {{$period_from}} &amp; {{$period_to}}</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -16,16 +16,13 @@
 		</tr>
 		<tr>
 			<td></td>
-			<?php foreach ($data as $key => $d): ?>
-				<td colspan="2">{{date('M Y',strtotime($d["date"]))}}</td>
-			<?php endforeach ?>
+			<td colspan="2" style="text-align: center;">Balance</td>
 			
 		</tr>
 		<tr>
 			<td>Description</td>
 			<?php foreach ($data as $key => $d): ?>
-				<td>In IDR</td>
-				<td>%</td>
+				<td>{{date('M Y',strtotime($d["date"]))}}</td>
 			<?php endforeach ?>
 		</tr>
 		@foreach ($data as $key => $d)
@@ -39,7 +36,6 @@
 							<?php foreach ($det2["detail"] as $key => $catdet2): ?>
 								<?php if($catdet2["id"]==$catdet["id"]){ ?>
 									<td>{{$catdet2["value"]}}</td>
-									<td>{{$catdet2["percentage"]}}</td>
 
 								<?php } ?>
 							<?php endforeach ?>
@@ -54,7 +50,6 @@
 					<?php foreach ($d2["detail"] as $key2=> $det2): ?>
 						<?php if($det["name"]==$det2["name"]){ ?>
 							<td>{{$det2["value"]}}</td>
-							<td>{{$det2["percentage"]}}</td>
 						<?php } ?>
 
 					<?php endforeach ?>
@@ -65,6 +60,5 @@
 		<?php endforeach ?>
 		@endif
 		@endforeach
-
 	</tbody>
 </table>

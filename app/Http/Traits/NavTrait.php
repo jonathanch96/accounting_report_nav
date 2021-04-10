@@ -11,6 +11,38 @@ trait NavTrait {
      * @param Request $request
      * @return $this|false|string
      */
+    public function tbtobs($tb){
+        $subcategory = GL_SubCategory::whereHas("category",function($q){
+            $q->where('report_type_id',2);
+        })->orderBy('order')->get();
+        $ytd_categorized_data = array();
+        foreach ($tb as $key => $t) {
+            $temp_data = array();
+            $temp_data["date"]=$t["date"];
+            $temp_data_detail = array();
+            foreach ($subcategory as $key => $sc) {
+                $sum = 0;
+                foreach ($t["detail"] as $key => $tbd) {
+                    foreach ($sc->gl_accounts as $key => $gl) {
+                        if($gl->No_==$tbd["No_"]){
+                           // print($sc->name. " - ".$gl->No_." - ".$gl->Name." = ".$this->numberFormat($tbd["value"])."<br>");
+                            $sum+=$tbd["value"];
+                        }
+
+                    }
+                }  
+                array_push($temp_data_detail, [
+                    'id'=>$sc->id,
+                    'category_id'=>$sc->category_id,
+                    'name'=>$sc->name,
+                    'value'=>$sum,
+                ]);
+            }
+            $temp_data["detail"]=$temp_data_detail;
+            array_push($ytd_categorized_data,$temp_data);
+        }
+        return $ytd_categorized_data;
+    }
     public function tbtopl($tb){
 
 
@@ -33,7 +65,7 @@ trait NavTrait {
                            // print($sc->name. " - ".$gl->No_." - ".$gl->Name." = ".$this->numberFormat($tbd["value"])."<br>");
                             $sum+=$tbd["value"];
                         }
-                        
+
                     }
                 }  
                 array_push($temp_data_detail, [
@@ -65,7 +97,7 @@ trait NavTrait {
                         $divide =  $ytddet["value"];
                     }else{
                         $ytddet["value"]-=$prev_data["detail"][$counter]["value"];
-                        $ytddet["percentage"]=round(($ytddet["value"]/$divide),4,PHP_ROUND_HALF_UP );
+                        $ytddet["percentage"]=($ytddet["value"]/$divide);
 
                     }
                     $temp_ytd["detail"][$counter]=$ytddet;
@@ -114,10 +146,21 @@ trait NavTrait {
                 });
             })->get();
             foreach ($gl_account as $key => $gl) {
+                $value = $gl->glnav->glEntryYTD(date('Y-m-t',$date_from).' 23:59:59')->sum('Amount');
+                if($gl->glnav["Account Type"]==2){
+                    $totaling = $gl->glnav->Totaling;
+                    $totaling = explode("..", $totaling);
+
+                    $temp_gl_account = GL_Account::where('No_','>=',$totaling[0])->where('No_','<=',$totaling[1])->get();
+
+                    foreach ($temp_gl_account as $key => $tgl) {
+                        $value+=$tgl->glnav->glEntryYTD(date('Y-m-t',$date_from).' 23:59:59')->sum('Amount');
+                    }
+                }
                 array_push($detail, [
                     'No_'=>$gl->No_,
                     'Name'=>$gl->Name,
-                    'value'=>$gl->glnav->glEntryYTD(date('Y-m-t',$date_from).' 23:59:59')->sum('Amount'),
+                    'value'=>$value,
                     'category_id'=>$gl->category_id,
                 ]);
             }
@@ -136,11 +179,11 @@ trait NavTrait {
 
     }
     public function numberFormat($value){
-       return number_format($value,'2','.',',');
-   }
-   public function calculate($formula){
+     return number_format($value,'2','.',',');
+ }
+ public function calculate($formula){
 
-   }
+ }
 
 
 }

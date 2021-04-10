@@ -323,6 +323,22 @@ class MenuItemsTableSeeder extends Seeder
                 'route' => 'voyager.report-types.index',
                 'parameters' => NULL,
             ),
+            19 => 
+            array (
+                'id' => 20,
+                'menu_id' => 1,
+                'title' => 'BS_report',
+                'url' => 'bs_report',
+                'target' => '_self',
+                'icon_class' => 'voyager-wallet',
+                'color' => '#000000',
+                'parent_id' => 17,
+                'order' => 2,
+                'created_at' => '2021-04-10 09:38:11',
+                'updated_at' => '2021-04-10 09:39:20',
+                'route' => NULL,
+                'parameters' => '',
+            ),
         ));
         
         

@@ -475,6 +475,14 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-08 10:00:38',
                 'updated_at' => '2021-04-08 10:00:38',
             ),
+            57 => 
+            array (
+                'id' => 58,
+                'key' => 'browse_bs_report',
+                'table_name' => NULL,
+                'created_at' => '2021-04-10 09:36:49',
+                'updated_at' => '2021-04-10 09:36:49',
+            ),
         ));
         
         
