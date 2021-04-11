@@ -43,12 +43,12 @@
                         @endif
                         <div class="form-group col-md-12">
                             <label class="control-label" for="name">Dari Bulan ..</label>
-                            <input type="date" class="form-control" name="month_from" value="">
+                            <input required type="date" class="form-control" name="month_from" value="">
 
                         </div>
                         <div class="form-group col-md-12">
                             <label class="control-label" for="name">Sampai Bulan ..</label>
-                            <input type="date" class="form-control" name="month_to" value="">
+                            <input required type="date" class="form-control" name="month_to" value="">
 
                         </div>
                     </div>
