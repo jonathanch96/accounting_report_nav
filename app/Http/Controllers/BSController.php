@@ -180,12 +180,13 @@ class BSController extends Controller
 
 		// return view('reports.bs_report_template',[
 		// 	'data'=>$data,
+		// 	'data_2'=>$data_2,
 		// 	'period_from'=>$period_from,
 		// 	'period_to'=>$period_to,
 
 		// ]);
-		dd($data_2);
-		return Excel::download(new BSExport($data,$period_from,$period_to), 'bs_report.xlsx');
+		//dd($data_2);
+		return Excel::download(new BSExport($data,$data_2,$period_from,$period_to), 'bs_report.xlsx');
 
 	}
 }

@@ -27,6 +27,9 @@ class PLExport implements FromView,ShouldAutoSize,WithColumnFormatting,WithStyle
         $row_start=6;
 
         //add bold header
+        $row_format[1]=['font' => ['bold' => true]];
+        $row_format[2]=['font' => ['bold' => true]];
+        $row_format[3]=['font' => ['bold' => true]];
         $row_format[5]=['font' => ['bold' => true]];
         $row_format[6]=['font' => ['bold' => true]];
 
