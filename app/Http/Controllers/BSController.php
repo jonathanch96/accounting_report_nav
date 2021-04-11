@@ -38,7 +38,6 @@ class BSController extends Controller
 		$category = GL_Category::where('report_type_id','2')->orderBy('order')->get();
 		$flag_first_pl = true;
 
-
 		foreach ($bs as $key => $p) {
 			$temp_category_data_detail = array();
 			$temp_category_data_detail_2 = array();
@@ -91,7 +90,33 @@ class BSController extends Controller
 					// $dataModel = $dataType?$dataType->model_name::find($data_to_search):null;
 						//if($counter==4)dd($dataModel);
 					if($c->additional_formula == 'g-l-sub-categories'){
+						$bs_counter = 0;
 						foreach ($p["detail"] as $key => $pdet) {
+							if($pdet["id"]==97&&$c->id==22){//pas mau ngitung total capital
+								//override value saldo laba
+								$temp_value = 0;
+								foreach ($temp_array['detail']??[] as $key => $ta) {
+									if($ta["id"]=="19"){//total asset|Total Hutang Jangka Pendek ||Total Hutang Pajak
+										$temp_value += $ta['value'];
+										break;
+									}
+								}
+								foreach ($temp_array_2['detail']??[] as $key => $ta) {
+									if($ta["id"]=="20"||$ta["id"]=="21"){//total asset|Total Hutang Jangka Pendek ||Total Hutang Pajak
+										$temp_value += $ta['value'];
+									}
+								}
+								foreach ($p["detail"] as $key => $pdet2) {
+									//get Modal Saham | Deviden
+									if($pdet2["id"]=="95"||$pdet2["id"]=="96"){
+										$temp_value += $pdet2['value'];
+									}
+
+								}
+
+
+								$p["detail"][$bs_counter]["value"]=$temp_value*-1;
+							}
 							
 							if($pdet["id"]==$data_to_search){
 								$temp_val = $pdet['value']*($prev_action=="-"?-1:1);
@@ -101,6 +126,8 @@ class BSController extends Controller
 								$value+=$temp_val;
 							//if($c->name=='Estimasi Pajak')print($value. " <br> ");
 							}
+							$bs_counter++;
+
 						}
 					}else{
 						//internal 
