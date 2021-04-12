@@ -94,14 +94,14 @@ class UsersTableSeeder extends Seeder
                 'id' => 6,
                 'role_id' => 2,
                 'name' => 'Eina Yenny Tayu',
-                'email' => 'by_6771@yahoo.co.id',
+                'email' => 'yennytayu@gmail.com',
                 'avatar' => 'users/default.png',
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$KxopZ5ODTwp2TsAyy3n6LOKyX8WlQL0fKen9mA3QnNXpzBV92hl8G',
+                'password' => '$2y$10$jBA8/FAHWDvPTvzG.z6CceSqknZ2HSnXPxFSe/Jr6EILX8WhSrjKe',
                 'remember_token' => NULL,
-                'settings' => NULL,
+                'settings' => '{"locale":"en"}',
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2021-04-12 02:36:42',
             ),
         ));
         

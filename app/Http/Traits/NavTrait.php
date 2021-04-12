@@ -20,23 +20,45 @@ trait NavTrait {
             $temp_data = array();
             $temp_data["date"]=$t["date"];
             $temp_data_detail = array();
+            $sum_hutang_bank = 0; //modif
             foreach ($subcategory as $key => $sc) {
                 $sum = 0;
+
                 foreach ($t["detail"] as $key => $tbd) {
                     foreach ($sc->gl_accounts as $key => $gl) {
                         if($gl->No_==$tbd["No_"]){
                            // print($sc->name. " - ".$gl->No_." - ".$gl->Name." = ".$this->numberFormat($tbd["value"])."<br>");
-                            $sum+=$tbd["value"];
+                            if($sc->id==49){
+                                if($tbd["value"]>=0){
+                                    $sum+=$tbd["value"];
+
+                                }else{
+                                    $sum_hutang_bank+=$tbd["value"];
+                                }
+                            }else{
+                                $sum+=$tbd["value"];
+                            }
                         }
 
                     }
                 }  
-                array_push($temp_data_detail, [
-                    'id'=>$sc->id,
-                    'category_id'=>$sc->category_id,
-                    'name'=>$sc->name,
-                    'value'=>$sum,
-                ]);
+                if($sc->id==84){
+                    //hutang bank
+                    array_push($temp_data_detail, [
+                        'id'=>$sc->id,
+                        'category_id'=>$sc->category_id,
+                        'name'=>$sc->name,
+                        'value'=>$sum_hutang_bank,
+                    ]);
+                }else{
+                    array_push($temp_data_detail, [
+                        'id'=>$sc->id,
+                        'category_id'=>$sc->category_id,
+                        'name'=>$sc->name,
+                        'value'=>$sum,
+                    ]);
+                }
+                
             }
             $temp_data["detail"]=$temp_data_detail;
             array_push($ytd_categorized_data,$temp_data);
@@ -179,11 +201,11 @@ trait NavTrait {
 
     }
     public function numberFormat($value){
-     return number_format($value,'2','.',',');
- }
- public function calculate($formula){
+       return number_format($value,'2','.',',');
+   }
+   public function calculate($formula){
 
- }
+   }
 
 
 }

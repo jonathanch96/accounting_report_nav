@@ -59,9 +59,9 @@ class GLAccountsTableSeeder extends Seeder
                 'Name' => 'PMT-8868',
                 'Income_Balance' => 1,
                 'Account_type' => 0,
-                'category_id' => 84,
+                'category_id' => 49,
                 'created_at' => '2021-04-06 12:24:00',
-                'updated_at' => '2021-04-06 12:24:00',
+                'updated_at' => '2021-04-12 04:24:46',
             ),
             4 => 
             array (
@@ -103,9 +103,9 @@ class GLAccountsTableSeeder extends Seeder
                 'Name' => 'OCBC-2261',
                 'Income_Balance' => 1,
                 'Account_type' => 0,
-                'category_id' => 84,
+                'category_id' => 49,
                 'created_at' => '2021-04-06 12:24:00',
-                'updated_at' => '2021-04-06 12:24:00',
+                'updated_at' => '2021-04-12 04:24:54',
             ),
             8 => 
             array (
@@ -642,9 +642,9 @@ class GLAccountsTableSeeder extends Seeder
                 'Name' => 'HUTANG BCA-889/P',
                 'Income_Balance' => 1,
                 'Account_type' => 0,
-                'category_id' => 84,
+                'category_id' => 49,
                 'created_at' => '2021-04-06 12:24:01',
-                'updated_at' => '2021-04-06 12:24:01',
+                'updated_at' => '2021-04-12 04:25:05',
             ),
             57 => 
             array (
@@ -653,9 +653,9 @@ class GLAccountsTableSeeder extends Seeder
                 'Name' => 'HUTANG PMT-868/P',
                 'Income_Balance' => 1,
                 'Account_type' => 0,
-                'category_id' => 84,
+                'category_id' => 49,
                 'created_at' => '2021-04-06 12:24:01',
-                'updated_at' => '2021-04-06 12:24:01',
+                'updated_at' => '2021-04-12 04:25:18',
             ),
             58 => 
             array (
@@ -664,9 +664,9 @@ class GLAccountsTableSeeder extends Seeder
                 'Name' => 'HUTANG PMT-868/A',
                 'Income_Balance' => 1,
                 'Account_type' => 0,
-                'category_id' => 84,
+                'category_id' => 49,
                 'created_at' => '2021-04-06 12:24:01',
-                'updated_at' => '2021-04-06 12:24:01',
+                'updated_at' => '2021-04-12 04:25:25',
             ),
             59 => 
             array (
@@ -829,9 +829,9 @@ class GLAccountsTableSeeder extends Seeder
                 'Name' => 'HUTANG BCA-8889',
                 'Income_Balance' => 1,
                 'Account_type' => 0,
-                'category_id' => 84,
+                'category_id' => 49,
                 'created_at' => '2021-04-06 12:24:01',
-                'updated_at' => '2021-04-06 12:24:01',
+                'updated_at' => '2021-04-12 04:25:33',
             ),
             74 => 
             array (
@@ -840,9 +840,9 @@ class GLAccountsTableSeeder extends Seeder
                 'Name' => 'HUTANG PMT-868',
                 'Income_Balance' => 1,
                 'Account_type' => 0,
-                'category_id' => 84,
+                'category_id' => 49,
                 'created_at' => '2021-04-06 12:24:01',
-                'updated_at' => '2021-04-06 12:24:01',
+                'updated_at' => '2021-04-12 04:25:43',
             ),
             75 => 
             array (
