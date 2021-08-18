@@ -122,7 +122,7 @@ class PLController extends \TCG\Voyager\Http\Controllers\Controller
 				}
 
 				if($c->name=='Estimasi Pajak'){
-					$value*=0.25;
+					$value*=0.22;
 				}
 
 				//detail data
